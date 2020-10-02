@@ -127,7 +127,7 @@ function handleCardClick(event) {
     }
     // game is complete, so reset game
     if(cardCount === COLORS.length){
-      alert("all done");
+      alert("Need to create a reset button/feature");
       //const button = document.createElement('button[type="submit"]');
       
     }
