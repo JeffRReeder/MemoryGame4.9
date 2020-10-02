@@ -4,8 +4,6 @@ let card2 = null;
 let cardCount = 0;
 let stopClicking = false;
 
-
-
 const COLORS = [
   "red",
   "blue",
@@ -70,7 +68,7 @@ function handleCardClick(event) {
   console.log("you just clicked", event.target.className);
   let currentCard = event.target;
 
-  // card1 + card2 already selected, don't let user click anything more. Ref line 102
+  // card1 + card2 already selected, don't let user click anything more. Ref line 99
   if(stopClicking === true){
     return;
   }
@@ -80,14 +78,12 @@ function handleCardClick(event) {
     return;
   }
 
-  
-  
-  // 1. on click chnage bg color
+  // 1. on-click chnage bg color
   currentCard.style.backgroundColor = currentCard.classList[0];
 
   // 1st run no cards assigned
   if(!card1 || !card2){
-    // add class "flipped" to whoever
+    // 2. add class "flipped" to whoever
     currentCard.classList.add("flipped");
     // set card1 to currentCard or itself
     card1 = card1 || currentCard;
@@ -136,25 +132,7 @@ function handleCardClick(event) {
       
     }
   }
-
-
   console.log(cardCount, card1, card2);
-
-  // 2. add class flipped
-  //event.target.classList.add('flipped');
- 
-  // 2nd click change bg color, add class of 'flopped' , save card 2
-  // compare cards
-  // if match, change class from flipped to done
-  // if not match, call setTimeout and remove class of 'flipped', and clear card1/card2
-
-  // Users should only be able to change at most 2 cards at a time.
-  // Clicking on 2 matching cars is a "Match" - those cards stay face up.
-  // if event.target.className of 1 === of 2nd, then leave these divs alone, otherwise change them back to normal state.
-
-
-  // when clicking 2 cards that are NOT a match, they should stay turned over for at least 1 second before they hide color again.
-  // Use a 'setTimeout' so that you can execute code after 1 second.
 }
 
 // when the DOM loads
